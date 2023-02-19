@@ -1,0 +1,113 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AvaloniaApplication2.ViewModels"
+		xmlns:m="clr-namespace:AvaloniaApplication2.Models;assembly=AvaloniaApplication2"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		xmlns:s="clr-namespace:System;assembly=mscorlib"
+        x:Class="AvaloniaApplication2.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+		MinHeight="300"
+		MinWidth="250"
+		Height="300"
+		Width="250"
+        Title="AvaloniaApplication2">
+
+
+	<Design.DataContext>
+		<vm:MainWindowViewModel />
+	</Design.DataContext>
+	<Window.Styles>
+		<Style Selector="Button">
+			<Setter Property="Margin" Value="5"></Setter>
+		</Style>
+	</Window.Styles>
+	
+	
+	<Grid RowDefinitions="auto,auto,*">
+		<Menu Grid.Row="0">
+			<MenuItem Header="File">
+				<MenuItem Header="Exit" Command="{Binding Exit}"/>
+			</MenuItem>
+		</Menu>
+		<TextBlock Grid.Row="1" Text="{Binding NumberToRoam}" TextAlignment="Right" FontSize="30" Margin="5" />
+		<Grid Grid.Row="2" RowDefinitions="*,*,*,*" ColumnDefinitions="*,*,*,*">
+			<Button Grid.Row="0" Grid.Column="0" Command="{Binding AddNumberCommand}">
+				<Button.CommandParameter>
+					<s:Int32>1</s:Int32>
+				</Button.CommandParameter>
+				I
+			</Button>
+			<Button Grid.Row="0" Grid.Column="1" Command="{Binding AddNumberCommand}">
+				<Button.CommandParameter>
+					<s:Int32>5</s:Int32>
+				</Button.CommandParameter>
+				V
+			</Button>
+			<Button Grid.Row="2" Grid.Column="0" Command="{Binding AddNumberCommand}">
+				<Button.CommandParameter>
+					<s:Int32>10</s:Int32>
+				</Button.CommandParameter>
+				X
+			</Button>
+			<Button Grid.Row="1" Grid.Column="0" Command="{Binding AddNumberCommand}">
+				<Button.CommandParameter>
+					<s:Int32>50</s:Int32>
+				</Button.CommandParameter>
+				L
+			</Button>
+			<Button Grid.Row="1" Grid.Column="1" Command="{Binding AddNumberCommand}">
+				<Button.CommandParameter>
+					<s:Int32>100</s:Int32>
+				</Button.CommandParameter>
+				C
+			</Button>
+			<Button Grid.Row="2" Grid.Column="1" Command="{Binding AddNumberCommand}">
+				<Button.CommandParameter>
+					<s:Int32>500</s:Int32>
+				</Button.CommandParameter>
+				D
+			</Button>
+			<Button Grid.Row="3" Grid.Column="1" Command="{Binding AddNumberCommand}">
+				<Button.CommandParameter>
+					<s:Int32>1000</s:Int32>
+				</Button.CommandParameter>
+				M
+			</Button>
+			<Button Grid.Row="4" Grid.Column="0" Command="{Binding ClearScreen}">Сe</Button>
+			<Button Grid.Row="0" Grid.Column="3" Command="{Binding RemoveLastNumberCommand}">←</Button>
+			<Button Grid.Row="0" Grid.Column="2" Command="{Binding ExecuteOperationCommand}">
+				<Button.CommandParameter>
+					<m:Operation>Add</m:Operation>
+				</Button.CommandParameter>
+				+
+			</Button>
+			<Button Grid.Row="1" Grid.Column="2" Command="{Binding ExecuteOperationCommand}">
+				<Button.CommandParameter>
+					<m:Operation>Subtract</m:Operation>
+				</Button.CommandParameter>
+				-
+			</Button>
+			<Button Grid.Row="2" Grid.Column="2" Command="{Binding ExecuteOperationCommand}">
+				<Button.CommandParameter>
+					<m:Operation>Multiply</m:Operation>
+				</Button.CommandParameter>
+				*
+			</Button>
+			<Button Grid.Row="3" Grid.Column="2" Command="{Binding ExecuteOperationCommand}">
+				<Button.CommandParameter>
+					<m:Operation>Divide</m:Operation>
+				</Button.CommandParameter>
+				/
+			</Button>
+			<Button Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Command="{Binding ExecuteOperationCommand}">
+				<Button.CommandParameter>
+					<m:Operation>Result</m:Operation>
+				</Button.CommandParameter>
+				=
+			</Button>
+		</Grid>
+	</Grid>
+
+</Window>
