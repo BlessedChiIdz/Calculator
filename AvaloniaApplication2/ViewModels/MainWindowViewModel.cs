@@ -83,7 +83,6 @@ namespace AvaloniaApplication2.ViewModels
             _operation = Operation.Add;
             _firstValue = 0;
         }
-
         public void Exit()
         {
             Environment.Exit(0);
