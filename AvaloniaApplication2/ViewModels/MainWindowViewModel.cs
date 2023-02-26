@@ -73,7 +73,7 @@ namespace AvaloniaApplication2.ViewModels
         private void AddNumber(int value)
         {
             
-            ShownValue = ShownValue * 10 + value;
+            ShownValue = ShownValue + value;
             NumberToRoam = NumberToRoman(ShownValue);
         }
         public void ClearScreen()

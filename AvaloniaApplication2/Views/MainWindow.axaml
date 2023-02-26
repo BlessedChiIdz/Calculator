@@ -31,77 +31,77 @@
 				<MenuItem Header="Exit" Command="{Binding Exit}"/>
 			</MenuItem>
 		</Menu>
-		<TextBlock Grid.Row="1" Text="{Binding NumberToRoam}" TextAlignment="Right" FontSize="30" Margin="5" />
+		<TextBlock Grid.Row="1" Name="CalculationTextBlock" Text="{Binding NumberToRoam}" TextAlignment="Right" FontSize="30" Margin="5" />
 		<Grid Grid.Row="2" RowDefinitions="*,*,*,*" ColumnDefinitions="*,*,*,*">
-			<Button Grid.Row="0" Grid.Column="0" Command="{Binding AddNumberCommand}">
+			<Button Grid.Row="0" Grid.Column="0" Name="I" CommandParameter="I" Command="{Binding AddNumberCommand}">
 				<Button.CommandParameter>
 					<s:Int32>1</s:Int32>
 				</Button.CommandParameter>
 				I
 			</Button>
-			<Button Grid.Row="0" Grid.Column="1" Command="{Binding AddNumberCommand}">
+			<Button Grid.Row="0" Grid.Column="1" Name="V" CommandParameter="V" Command="{Binding AddNumberCommand} ">
 				<Button.CommandParameter>
 					<s:Int32>5</s:Int32>
 				</Button.CommandParameter>
 				V
 			</Button>
-			<Button Grid.Row="2" Grid.Column="0" Command="{Binding AddNumberCommand}">
+			<Button Grid.Row="2" Grid.Column="0" Name="X" CommandParameter="X" Command="{Binding AddNumberCommand}">
 				<Button.CommandParameter>
 					<s:Int32>10</s:Int32>
 				</Button.CommandParameter>
 				X
 			</Button>
-			<Button Grid.Row="1" Grid.Column="0" Command="{Binding AddNumberCommand}">
+			<Button Grid.Row="1" Grid.Column="0" Name="L" CommandParameter="L" Command="{Binding AddNumberCommand}">
 				<Button.CommandParameter>
 					<s:Int32>50</s:Int32>
 				</Button.CommandParameter>
 				L
 			</Button>
-			<Button Grid.Row="1" Grid.Column="1" Command="{Binding AddNumberCommand}">
+			<Button Grid.Row="1" Grid.Column="1" Name="C" CommandParameter="C" Command="{Binding AddNumberCommand}">
 				<Button.CommandParameter>
 					<s:Int32>100</s:Int32>
 				</Button.CommandParameter>
 				C
 			</Button>
-			<Button Grid.Row="2" Grid.Column="1" Command="{Binding AddNumberCommand}">
+			<Button Grid.Row="2" Grid.Column="1" Name="D" CommandParameter="D" Command="{Binding AddNumberCommand}">
 				<Button.CommandParameter>
 					<s:Int32>500</s:Int32>
 				</Button.CommandParameter>
 				D
 			</Button>
-			<Button Grid.Row="3" Grid.Column="1" Command="{Binding AddNumberCommand}">
+			<Button Grid.Row="3" Grid.Column="1" Name="M" CommandParameter="M" Command="{Binding AddNumberCommand}">
 				<Button.CommandParameter>
 					<s:Int32>1000</s:Int32>
 				</Button.CommandParameter>
 				M
 			</Button>
-			<Button Grid.Row="4" Grid.Column="0" Command="{Binding ClearScreen}">Сe</Button>
+			<Button Grid.Row="4" Grid.Column="0" Name="Ce" Command="{Binding ClearScreen}">Сe</Button>
 			<Button Grid.Row="0" Grid.Column="3" Command="{Binding RemoveLastNumberCommand}">←</Button>
-			<Button Grid.Row="0" Grid.Column="2" Command="{Binding ExecuteOperationCommand}">
+			<Button Grid.Row="0" Grid.Column="2" Name="Plus" Command="{Binding ExecuteOperationCommand}">
 				<Button.CommandParameter>
 					<m:Operation>Add</m:Operation>
 				</Button.CommandParameter>
 				+
 			</Button>
-			<Button Grid.Row="1" Grid.Column="2" Command="{Binding ExecuteOperationCommand}">
+			<Button Grid.Row="1" Name="Minus" Grid.Column="2" Command="{Binding ExecuteOperationCommand}">
 				<Button.CommandParameter>
 					<m:Operation>Subtract</m:Operation>
 				</Button.CommandParameter>
 				-
 			</Button>
-			<Button Grid.Row="2" Grid.Column="2" Command="{Binding ExecuteOperationCommand}">
+			<Button Grid.Row="2" Name="Multiply" Grid.Column="2" Command="{Binding ExecuteOperationCommand}">
 				<Button.CommandParameter>
 					<m:Operation>Multiply</m:Operation>
 				</Button.CommandParameter>
 				*
 			</Button>
-			<Button Grid.Row="3" Grid.Column="2" Command="{Binding ExecuteOperationCommand}">
+			<Button Grid.Row="3" Name="Divide" Grid.Column="2" Command="{Binding ExecuteOperationCommand}">
 				<Button.CommandParameter>
 					<m:Operation>Divide</m:Operation>
 				</Button.CommandParameter>
 				/
 			</Button>
-			<Button Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Command="{Binding ExecuteOperationCommand}">
+			<Button Grid.Row="3" Grid.Column="3" Name="Equal" Grid.ColumnSpan="2" Command="{Binding ExecuteOperationCommand}">
 				<Button.CommandParameter>
 					<m:Operation>Result</m:Operation>
 				</Button.CommandParameter>
